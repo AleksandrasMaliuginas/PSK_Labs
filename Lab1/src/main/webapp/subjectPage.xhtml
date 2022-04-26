@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head/>
+<h:body>
+    <h3>Tutor: #{subjectPage.subject.tutor.name}</h3>
+    <h2>Students attending #{subjectPage.subject.name} course:</h2>
+    <ol>
+        <ui:repeat value="#{subjectPage.subject.students}" var="student">
+            <li>
+                <h:link value="#{student.id}   #{student.name}" outcome="studentPage?studentId=#{student.id}"/>
+            </li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="name" value="#{subjectPage.studentToAdd.name}" required="true" />
+        <h:commandButton value="Add student to the course"
+                         actionListener="#{subjectPage.addStudent}"
+                         action="#{'subjectPage?faces-redirect=true&amp;subjectId='.concat(subjectPage.subject.id)}">
+                <f:param name="subjectId" value="#{subjectPage.subject.id}" />
+        </h:commandButton>
+    </h:form>
+    <br />
+    <h:form>
+        <h:inputText a:placeholder="name" value="#{subjectPage.tutorToAdd.name}" required="true" />
+        <h:commandButton value="Add Tutor"
+                         actionListener="#{subjectPage.addTutor}"
+                         action="#{'subjectPage?faces-redirect=true&amp;subjectId='.concat(subjectPage.subject.id)}">
+            <f:param name="subjectId" value="#{subjectPage.subject.id}" />
+        </h:commandButton>
+    </h:form>
+    <h:link outcome="index" value="Back to Subjects"/>
+</h:body>
+</html>
