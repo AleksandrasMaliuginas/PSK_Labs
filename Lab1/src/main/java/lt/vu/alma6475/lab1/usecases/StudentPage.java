@@ -1,9 +1,8 @@
-package lt.vu.alma6475.lab1.models;
+package lt.vu.alma6475.lab1.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
 import lt.vu.alma6475.lab1.entity.Student;
-import lt.vu.alma6475.lab1.entity.Tutor;
 import lt.vu.alma6475.lab1.persistence.StudentsDAO;
 import lt.vu.alma6475.lab1.persistence.SubjectsDAO;
 
@@ -11,10 +10,8 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
-import javax.transaction.Transactional;
 import java.io.Serializable;
 import java.util.Map;
-import java.util.Optional;
 
 @Model
 public class StudentPage implements Serializable {

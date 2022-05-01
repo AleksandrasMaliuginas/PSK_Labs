@@ -1,4 +1,4 @@
-package lt.vu.alma6475.lab1.models;
+package lt.vu.alma6475.lab1.usecases;
 
 import lombok.Getter;
 import lombok.Setter;

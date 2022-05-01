@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head/>
+<h:body>
+    <h3>Tutor: #{subjectPageMyBatis.subject.tutor.name}</h3>
+    <h2>Students attending #{subjectPageMyBatis.subject.name} course:</h2>
+<!--    <p>#{subjectPageMyBatis.subject.students.size()}</p>-->
+    <ol>
+        <ui:repeat value="#{subjectPageMyBatis.subject.students}" var="student">
+            <li>
+                ID: #{student.id}    NAME: #{student.name}
+            </li>
+        </ui:repeat>
+    </ol>
+
+    <h:link outcome="subjects" value="Back to Subjects"/>
+</h:body>
+</html>
