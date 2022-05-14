@@ -29,11 +29,11 @@ public class Subject implements Serializable {
     private Tutor tutor;
 
     @ManyToMany
-//    @JoinTable(
-//            name = "course_like",
-//            joinColumns = @JoinColumn(name = "student_id"),
-//            inverseJoinColumns = @JoinColumn(name = "course_id"))
-    List<Student> students = new ArrayList<>();;
+    List<Student> students = new ArrayList<>();
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
 
     public Subject() {
     }
