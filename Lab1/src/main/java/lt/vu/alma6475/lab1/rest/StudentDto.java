@@ -4,7 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class SubjectDto {
+public class StudentDto {
     private String Name;
     private String TutorName;
+    private Integer version;
 }

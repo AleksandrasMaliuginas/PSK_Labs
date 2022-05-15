@@ -30,9 +30,10 @@ public class Student implements Serializable {
     @ManyToMany(mappedBy = "students")
     List<Subject> subjects = new ArrayList<>();
 
-//    @Version
-//    @Column(name = "OPT_LOCK_VERSION")
-//    private Integer version;
+    @Version
+    @Column(name = "OPT_LOCK_VERSION", columnDefinition = "integer default 0")
+    private Integer version;
+
     public Student() {
     }
     @Override

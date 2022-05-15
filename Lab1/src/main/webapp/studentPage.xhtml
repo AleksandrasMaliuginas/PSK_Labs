@@ -2,7 +2,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
 <h:head/>
 <h:body>
     <h2>Student #{studentPage.student.name} course:</h2>
@@ -13,6 +14,14 @@
             </li>
         </ui:repeat>
     </ol>
+
+    <h:form>
+        <h:inputText value="#{studentPage.student.name}" required="true" />
+        <h:commandButton value="Edit student" action="#{studentPage.updateStudentName}" />
+
+        <h:outputText value="Student was updated by other user."
+                      rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+    </h:form>
 
     <h:link outcome="index" value="Back to Subjects"/>
 </h:body>
