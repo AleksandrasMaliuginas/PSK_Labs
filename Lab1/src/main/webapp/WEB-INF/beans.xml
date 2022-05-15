@@ -9,4 +9,8 @@
     <interceptors>
         <class>lt.vu.alma6475.lab1.interceptors.MethodLogger</class>
     </interceptors>
+
+    <alternatives>
+<!--        <class>lt.vu.alma6475.lab1.alternatives.LithuanianGreeting</class>-->
+    </alternatives>
 </beans>

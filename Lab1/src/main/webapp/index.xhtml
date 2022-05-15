@@ -17,6 +17,9 @@
         <h:commandButton value="Add new Subject" actionListener="#{subjects.createSubject}" action="index?faces-redirect=true"/>
     </h:form>
 
+    <h4>Alternative</h4>
+    <p>#{subjects.greeting.sayHello()}</p>
+
     <h:link outcome="myBatis/subjects" value="MyBatis implementation"/>
 </h:body>
 </html>
