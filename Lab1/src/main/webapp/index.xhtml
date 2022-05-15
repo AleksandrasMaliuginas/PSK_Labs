@@ -23,6 +23,16 @@
     <h4>Decorator</h4>
     <p>#{subjects.textDecorator.DecoratedName("Random name to decorate")}</p>
 
+    <h4>Async example</h4>
+    <h:form>
+        <h:outputText value="#{generateStudentId.getGenerationStatus()}"/>
+        <h:commandButton value="Generate Student ID"
+                         disabled="#{generateStudentId.isGenerating()}"
+                         action="#{generateStudentId.generateStudentId()}" />
+<!--            <f:param name="albumId" value="#{updateAlbumDetails.album.album_id}"/>-->
+<!--        </h:commandButton>-->
+    </h:form>
+
     <h:link outcome="myBatis/subjects" value="MyBatis implementation"/>
 </h:body>
 </html>
