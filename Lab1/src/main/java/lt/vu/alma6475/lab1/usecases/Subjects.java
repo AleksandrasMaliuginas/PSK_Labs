@@ -3,6 +3,7 @@ package lt.vu.alma6475.lab1.usecases;
 import lombok.Getter;
 import lombok.Setter;
 import lt.vu.alma6475.lab1.alternatives.Greeting;
+import lt.vu.alma6475.lab1.decorators.TextDecorator;
 import lt.vu.alma6475.lab1.entity.Subject;
 import lt.vu.alma6475.lab1.persistence.SubjectsDAO;
 
@@ -24,9 +25,11 @@ public class Subjects {
     @Getter
     private List<Subject> allSubjects;
 
-    @Inject
-    @Getter
+    @Inject @Getter
     private Greeting greeting;
+
+    @Inject @Getter
+    private TextDecorator textDecorator;
 
     @PostConstruct
     public void init(){
