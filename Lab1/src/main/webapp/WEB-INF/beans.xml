@@ -11,7 +11,7 @@
     </interceptors>
 
     <alternatives>
-<!--        <class>lt.vu.alma6475.lab1.alternatives.LithuanianGreeting</class>-->
+        <class>lt.vu.alma6475.lab1.alternatives.LithuanianGreeting</class>
     </alternatives>
     <decorators>
         <class>lt.vu.alma6475.lab1.decorators.DecoratorImpl</class>

@@ -2,6 +2,7 @@ package lt.vu.alma6475.lab1.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
+import lt.vu.alma6475.lab1.alternatives.ApplicationStatus;
 import lt.vu.alma6475.lab1.alternatives.Greeting;
 import lt.vu.alma6475.lab1.decorators.TextDecorator;
 import lt.vu.alma6475.lab1.entity.Subject;
@@ -30,6 +31,9 @@ public class Subjects {
 
     @Inject @Getter
     private TextDecorator textDecorator;
+
+    @Inject @Getter
+    private ApplicationStatus appStatus;
 
     @PostConstruct
     public void init(){
